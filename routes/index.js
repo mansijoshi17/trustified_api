@@ -46,16 +46,18 @@ router.post("/login", async (req, res) => {
   if (Number(balance1) > 0 || Number(balance2) > 0) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header(
-      "Access-Control-Allow-Headers",
-      "Origin, X-Requested-With, Content-Type, Accept"
+      "Access-Control-Allow-Methods",
+      "POST, PUT, PATCH, GET, DELETE, OPTIONS"
     );
+    res.header("Access-Control-Allow-Headers", "*");
     res.status(200).json({ status: true });
   } else {
     res.header("Access-Control-Allow-Origin", "*");
     res.header(
-      "Access-Control-Allow-Headers",
-      "Origin, X-Requested-With, Content-Type, Accept"
+      "Access-Control-Allow-Methods",
+      "POST, PUT, PATCH, GET, DELETE, OPTIONS"
     );
+    res.header("Access-Control-Allow-Headers", "*");
     res.status(200).json({ status: false });
   }
 }); // Login with Trustified Token....
