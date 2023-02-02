@@ -44,10 +44,10 @@ router.post("/login", async (req, res) => {
     .call();
 
   if (Number(balance1) > 0 || Number(balance2) > 0) {
-    res.send("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Origin","*")
     res.status(200).json({ status: true });
   } else {
-    res.send("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Origin","*")
     res.status(200).json({ status: false });
   }
 }); // Login with Trustified Token....
