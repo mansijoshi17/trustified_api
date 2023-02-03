@@ -12,7 +12,7 @@ const trustifiedContracts = {
 };
 
 const rpcUrls = {
-  fevm: "https://api.hyperspace.node.glif.io/rpc/v0",
+  fevm: "https://api.hyperspace.node.glif.io/rpc/v1",
   mumbai: `https://polygon-mumbai.g.alchemy.com/v2/${process.env.REACT_APP_ALCHEMY_KEY}`,
 };
 
