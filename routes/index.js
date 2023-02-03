@@ -1,22 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const fs = require("fs");
 var Web3 = require("web3");
-const Provider = require("@truffle/hdwallet-provider");
-const admin = require("firebase-admin");
-
-admin.initializeApp({
-  credential: admin.credential.cert({
-    projectId: process.env.REACT_APP_PROJECT_ID,
-    privateKey: process.env.REACT_APP_FIREBASE_PRIVATE_KEY
-      ? process.env.REACT_APP_FIREBASE_PRIVATE_KEY.replace(/\\n/g, "\n")
-      : undefined,
-    clientEmail: process.env.REACT_APP_CLIENT_EMAIL,
-  }),
-  databaseURL: process.env.REACT_APP_DATABASE_URL,
-});
-
-const db = admin.firestore();
 
 const { trustifiedContracts, rpcUrls } = require("../config");
 const trustifiedContractAbi = require("../abi/Trustified.json");
