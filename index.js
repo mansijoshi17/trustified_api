@@ -17,6 +17,16 @@ app.use(bodyParser.json());
 
 app.use("/trustified/api", router);
 
+app.use(express.static(path.join(__dirname, "public")));
+
+app.get("/css", function (req, res) {
+  res.redirect("index.css");
+});
+
+app.get("/js", function (req, res) {
+  res.redirect("trustified.js");
+});
+
 app.listen(port, function () {
   console.log("Runnning on " + port);
 });
